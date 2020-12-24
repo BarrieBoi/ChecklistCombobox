@@ -400,12 +400,8 @@ class ChecklistCombobox(ttk.Combobox):
         # return a list of the values associated with the checked Checkboxes instead.
         # These are always stored in the Entry widget text anyway.
         all_text = [b.cget('text') for b,v in zip(self.checkbuttons,self.variables) if v.get() == 1]
-        if len(all_text) > 1:
-            return all_text
-        elif len(all_text) == 1:
-            return all_text[0]
-        else:
-            return '' # Empty string
+	return all_text
+
     def set(self,value):
         # Normally this sets the text in the Combobox to "value". We will now allow the
         # user to pass in an array-like variable for "value", and we will activate all
